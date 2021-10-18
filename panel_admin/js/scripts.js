@@ -37,7 +37,7 @@ function registrarPedido() {
 //aprobar pedido
 function aprobarPedido(datos) {
   let d = datos.split("||");
-  let respuesta = ("idPedido=" + d[1] + "&estado="+1);
+  let respuesta = "idPedido=" + d[1] + "&estado=" + 1;
   // alert(respuesta);
   Swal.fire({
     title: "Desea aprobar el Pedido??",
@@ -47,15 +47,16 @@ function aprobarPedido(datos) {
     cancelButtonColor: "#d33",
     confirmButtonText: "Aprobar",
     cancelButtonText: "Atras",
+    input: "text",
   }).then((result) => {
     if (result.isConfirmed) {
+      respuesta= respuesta+"&respuesta="+result.value;
       $.ajax({
         type: "POST",
         url: "aprobarPedido.php",
-        data: respuesta,
+        data: respuesta, 
         datatype: "json",
         success: function (r) {
-         
           if (r == 1) {
             Swal.fire({
               html: '<br><img src="../img/logo-dan.png" alt="" style="width:150px">',
@@ -81,25 +82,26 @@ function aprobarPedido(datos) {
 //cancelar pedido
 function cancelarPedido(datos) {
   let d = datos.split("||");
-  let respuesta = ("idPedido=" + d[1] + "&estado="+2);
+  let respuesta = "idPedido=" + d[1] + "&estado=" + 2;
   // alert(respuesta);
   Swal.fire({
-    title: "Desea Anular el Pedido??",
+    title: "Desea anular el Pedido??",
     icon: "warning",
     showCancelButton: true,
     confirmButtonColor: "#3085d6",
     cancelButtonColor: "#d33",
     confirmButtonText: "Anular",
     cancelButtonText: "Atras",
+    input: "text",
   }).then((result) => {
     if (result.isConfirmed) {
+      respuesta= respuesta+"&respuesta="+result.value;
       $.ajax({
         type: "POST",
         url: "aprobarPedido.php",
-        data: respuesta,
+        data: respuesta, 
         datatype: "json",
         success: function (r) {
-         
           if (r == 1) {
             Swal.fire({
               html: '<br><img src="../img/logo-dan.png" alt="" style="width:150px">',
