@@ -84,7 +84,7 @@ if (empty($_SESSION['active'])) {
                             $productos = $conexion->consultarDatos($consultaSQL);
                             foreach ($productos as $producto) : ?>
                                 <center>
-                                    <div class="row " style="margin-top: 10px; vertical-align: auto;">
+                                    <div class="row " style="vertical-align: auto;">
                                         <div class="col-md-1">
                                             <?php echo ($producto['referencia']); ?>
                                         </div>

@@ -16,7 +16,7 @@ include("../db/Conexion.php"); ?>
                     <b><label for="cantidad<?php echo $producto['id_producto'] ?>"><?php echo $producto['descripcion'] ?></label></b>
                 </div>
                 <div class="panel-body">
-                    <center><img style="width: 50%;" src="../img/<?php echo $producto['referencia']; ?>.png"></center>
+                    <center><a href="" data-toggle="modal" data-target="#myModal<?php echo $producto['id_producto'] ?>"><img style="width: 50%;" src="../img/<?php echo $producto['referencia']; ?>.png"></a> </center>
                     <p><b>Referencia: </b> <?php echo $producto['referencia']; ?></p>
                     <p><b>Peso: </b> <?php echo $producto['peso']; ?> gr</p>
                     <p><b>Unidades: </b> <?php echo $producto['unidades']; ?></p>
@@ -31,7 +31,26 @@ include("../db/Conexion.php"); ?>
                 </div>
             </div>
         </div>
+        <!-- modal -->
+        <div class="modal fade" id="myModal<?php echo $producto['id_producto'] ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            <h4 class="modal-title" id="myModalLabel"><?php echo $producto['referencia']; ?>-<?php echo $producto['descripcion']; ?></h4>
+                        </div>
+                        <div class="modal-body">
+                        <center><img style="width: 70%;" src="../img/<?php echo $producto['referencia']; ?>.png"></center>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
 
+                        </div>
+                    </div>
+                    <!-- /.modal-content -->
+                </div>
+                <!-- /.modal-dialog -->
+            </div>
     <?php endforeach ?>
 
     <div class="col-lg-4 col-md-6">
