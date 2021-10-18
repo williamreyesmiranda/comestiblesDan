@@ -30,25 +30,34 @@ if (empty($_SESSION['active'])) {
 
     <div id="wrapper">
         <?php include "includes/navBar.php" ?>
-      
+
+
         <div id="page-wrapper">
             <div class="container-fluid">
                 <div class="row">
                     <!-- inicio de cuerpo de trabajo -->
                     <div class="col-lg-12">
-                        <h1 class="page-header">ESTE ES EL INICIO </h1>
+                        <h1 class="page-header">Aprobación De Pedidos</h1>
                     </div>
-                   
+
+                    <div id="tablaAprobacion"></div>
                 </div>
 
             </div>
-           
+
         </div>
-        
+
 
     </div>
-    
+
     <?php include "includes/scriptDown.php" ?>
+
+    <script>
+        $(document).ready(function() {
+            $('#tablaAprobacion').load('tablaAprobar.php')
+
+        });
+    </script>
 
 </body>
 

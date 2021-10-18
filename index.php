@@ -1,3 +1,9 @@
+<?php
+session_start();
+if (!empty($_SESSION['active'])){
+    header('location: panel_admin/');
+  }
+?>
 <!DOCTYPE html>
 <html lang="es">
     <head>
@@ -6,7 +12,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="">
         <meta name="author" content="">
-
+        <link rel="shortcut icon" href="img/logo-dan.png">
         <title>Inicio Sesión</title>
         <!-- Bootstrap Core CSS -->
         <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -43,6 +49,7 @@
                                     <button type="submit" name="submit" id="submit" class="btn btn-lg btn-success btn-block">Login</button>
                                 
                             </form>
+                            
                         </div>
                     </div>
                 </div>
@@ -50,7 +57,7 @@
         </div>
 
         <!-- jQuery -->
-        <!-- <script src="js/jquery.min.js"></script> -->
+        
         <script src="plugins/jquery/jquery-3.5.1.min.js"></script>
 
         <!-- Bootstrap Core JavaScript -->

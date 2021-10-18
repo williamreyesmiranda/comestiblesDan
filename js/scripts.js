@@ -21,7 +21,7 @@ $("#formLogin").submit(function (e) {
       success: function (data) {
         if (data == -1) {
           Swal.fire({
-            html: '<br><img src="img/logo-dan.png" alt="" style="width:150px">',
+            html: '<br><img src="../img/logo-dan.png" alt="" style="width:150px">',
             position: "center",
             icon: "error",
             title: "Usuario y Contraseña no son correctos",
@@ -30,7 +30,7 @@ $("#formLogin").submit(function (e) {
           });
         } else {
           Swal.fire({
-            html: '<br><img src="img/logo-dan.png" alt="" style="width:150px">',
+            html: '<br><img src="../img/logo-dan.png" alt="" style="width:150px">',
             position: "center",
             icon: "success",
             title: "Bienvenidos",

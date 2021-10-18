@@ -1,7 +1,7 @@
 <?php
 session_set_cookie_params(60 * 60 * 24);
 session_start();
-include("../db/Conexion.php");
+// include("../db/Conexion.php");
 date_default_timezone_set('America/Bogota');
 
 if (empty($_SESSION['active'])) {
@@ -20,9 +20,8 @@ if (empty($_SESSION['active'])) {
     <meta name="author" content="">
     <link rel="shortcut icon" href="../img/logo-dan.png">
 
-    <title>Aprobar Pedido</title>
+    <title>Montar Pedido</title>
     <?php include "includes/scriptUp.php" ?>
-
 
 </head>
 
@@ -30,25 +29,21 @@ if (empty($_SESSION['active'])) {
 
     <div id="wrapper">
         <?php include "includes/navBar.php" ?>
-      
-        <div id="page-wrapper">
-            <div class="container-fluid">
-                <div class="row">
-                    <!-- inicio de cuerpo de trabajo -->
-                    <div class="col-lg-12">
-                        <h1 class="page-header">ESTE ES EL INICIO </h1>
-                    </div>
-                   
-                </div>
 
-            </div>
-           
+        <br><br>
+        <div id="page-wrapper">
+          <div id="cardPedido"></div>
+
         </div>
-        
+
 
     </div>
-    
     <?php include "includes/scriptDown.php" ?>
+    <script>
+        $(document).ready(function() {
+            $('#cardPedido').load('cardPedido.php');
+        })
+    </script>
 
 </body>
 
